@@ -1,7 +1,5 @@
 package paqueteEvaluacion;
-
 import java.util.Scanner;
-
 public class Util {
 
 	public static void escribir(String mensaje) {
@@ -22,5 +20,7 @@ public class Util {
 	protected static final String Colores[] = {
 		"blanco", "negro", "rojo", "azul", "gris"
 	};
+	
+	
 	
 }

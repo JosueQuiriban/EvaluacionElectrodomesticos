@@ -16,7 +16,7 @@ public class Electrodomestico {
 	 * @param peso              Es el peso que tendra por defecto los objetos que
 	 *                          hereden de esta clase.
 	 */
-	private int precioBase;
+	private float precioBase;
 	private String color;
 	private char consumoEnergetico;
 	private float peso;
@@ -24,7 +24,7 @@ public class Electrodomestico {
 	/**
 	 * Constantes con el valor por defecto.
 	 */
-	private final int PRECIO_BASE = 100000;
+	private final float PRECIO_BASE = 100000;
 	private final String COLOR = "blanco";
 	private final char CONSUMO_ENERGETICO = 'F';
 	private final float PESO = 5;
@@ -46,7 +46,7 @@ public class Electrodomestico {
 	 * @param precioBase Se le da el valor por defecto usando una constante.
 	 * @param peso       Se le da el valor por defecto usando una constante.
 	 */
-	public Electrodomestico(int precioBase, float peso) {
+	public Electrodomestico(float precioBase, float peso) {
 		this();
 		this.precioBase = PRECIO_BASE;
 		this.peso = PESO;
@@ -72,7 +72,7 @@ public class Electrodomestico {
 
 	// Metodos Get
 
-	public int getPrecioBase() {
+	public float getPrecioBase() {
 		return precioBase;
 	}
 
@@ -98,42 +98,70 @@ public class Electrodomestico {
 		}
 		return letra;
 	}
-	/*public char comprobarConsumoEnergetico(char letra) {
-		if (letra == 'A') {
-			return letra;
+
+	public String comprobarColor(String color) {
+		for (int i = 0; i < Util.Colores.length; i++) {
+			if (color != Util.Colores[i]) {
+				color = COLOR;
+			}
+
+		}
+		return color;
+	}
+
+	public float precioFinal(float peso, float precio) {
+		float precioFinal = 0;
+		precioSegunPeso(peso);
+		precioSegunConsumo(consumoEnergetico);
+		precioFinal = precioSegunPeso(peso) + precioSegunConsumo(consumoEnergetico);
+		return precioFinal;
+	}
+
+	public float precioSegunPeso(float peso) {
+		float aumentaPrecio = 0;
+		if (peso > 0 && peso <= 19) {
+			aumentaPrecio += 10;
 		} else {
-			if (letra == 'B') {
-				return letra;
+			if (peso >= 20 && peso <= 49) {
+				aumentaPrecio += 50;
 			} else {
-				if (letra == 'C') {
-					return letra;
+				if (peso >= 50 && peso <= 79) {
+					aumentaPrecio += 80;
 				} else {
-					if (letra == 'D') {
-						return letra;
+					if (peso > 89) {
+						aumentaPrecio += 100;
+					}
+				}
+			}
+		}
+		return aumentaPrecio;
+	}
+
+	public float precioSegunConsumo(char consumoEnergetico) {
+		float sumaPrecio = 0;
+		if (consumoEnergetico == 'A') {
+			sumaPrecio = precioBase + 100;
+		} else {
+			if (consumoEnergetico == 'B') {
+				sumaPrecio = precioBase + 80;
+			} else {
+				if (consumoEnergetico == 'C') {
+					sumaPrecio = precioBase + 60;
+				} else {
+					if (consumoEnergetico == 'D') {
+						sumaPrecio = precioBase + 50;
 					} else {
-						if (letra == 'D') {
-							return letra;
+						if (consumoEnergetico == 'E') {
+							sumaPrecio = precioBase + 30;
 						} else {
-							if (letra == 'E') {
-								return letra;
-							} else {
-								letra = CONSUMO_ENERGETICO;
+							if (consumoEnergetico == 'F') {
+								sumaPrecio = precioBase + 10;
 							}
 						}
 					}
 				}
 			}
 		}
-		return letra;
-	}	
-	*/
-	public String comprobarColor(String color) {
-		for (int i = 0; i < Util.Colores.length; i++) {
-			if (color != Util.Colores[i]) {
-				color = COLOR;
-			}
-			
-		}
-		return color;
+		return sumaPrecio;
 	}
 }
