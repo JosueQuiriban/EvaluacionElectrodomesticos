@@ -109,6 +109,7 @@ public class Electrodomestico {
 		return color;
 	}
 
+	
 	public float precioFinal(float peso, float precio) {
 		float precioFinal = 0;
 		precioSegunPeso(peso);
