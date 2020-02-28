@@ -39,7 +39,7 @@ public class Ejecutable {
 		electrodomesticos[5] = new Televisor(65, true, 100000, 8, "negro", 'A');
 		electrodomesticos[6] = new Lavadora(5, 100000, 4, "azul", 'F');
 		electrodomesticos[7] = new Electrodomestico(100000, 2, "rojo", 'B');
-		electrodomesticos[8] = new Televisor(70, true, 100000, 4, "negro", 'A');
+		electrodomesticos[8] = new Televisor(30, true, 100000, 4, "negro", 'A');
 		electrodomesticos[9] = new Electrodomestico(100000, 244, "cafe", 'F');
 		
 		/**

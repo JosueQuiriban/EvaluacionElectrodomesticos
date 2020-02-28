@@ -28,6 +28,8 @@ public class Televisor extends Electrodomestico {
 	 */
 	public Televisor() {
 		super();
+		this.resolucion = RESOLUCION;
+		this.sintonizadorTDT = SINTONIZADOR_TDT;
 	}
 
 	/**
@@ -81,15 +83,12 @@ public class Televisor extends Electrodomestico {
 	@Override
 	public float precioFinal(float peso, float precio) {
 		float precioFinal = super.precioFinal(peso, precio);
-		this.getPrecioBase();
-		if (resolucion > 40) {
-			precioFinal = precioFinal / 100;
-			precioFinal = precioFinal * 130;
-		}
 		if (sintonizadorTDT == true) {
 			precioFinal += 50;
 		}
+		if (resolucion > 40) {
+			precioFinal *=1.3;
+		}
 		return precioFinal;
 	}
-
 }
