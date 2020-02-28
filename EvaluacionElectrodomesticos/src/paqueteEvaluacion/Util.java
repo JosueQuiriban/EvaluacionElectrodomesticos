@@ -1,22 +1,33 @@
 package paqueteEvaluacion;
 
-import java.util.Scanner;
-
+/**
+ * Clase de utilidad con metodo escribir, arreglo de
+ * Letras y Colores.
+ * @author josuequiriban
+ *
+ */
 public class Util {
 
+	/**
+	 * Metodo que muestra mensaje al usuario.
+	 * @param mensaje Mensaje que se muestra al usuario.
+	 */
 	public static void escribir(String mensaje) {
 		System.out.println(mensaje);
 	}
 
-	public static String leer(String mensaje) {
-		escribir(mensaje);
-		Scanner entrada = new Scanner(System.in);
-		return entrada.nextLine();
-	}
-
+	/**
+	 * Arreglo de Letras que se usara en las
+	 *  clases heredadas de Electrodomestico.
+	 */
 	protected static final char Letras[] = { 'A', 'B', 'C', 'D', 'E', 'F' };
 
-	protected static final String Colores[] = { "blanco", "negro", "rojo", "azul", "gris" };
+	/**
+	 * Arreglo de Colores que se usara en las
+	 *  clases heredadas de Electrodomestico.
+	 */
+	protected static final String Colores[] = { "blanco", "negro",
+						   "rojo", "azul", "gris" };
 
 	
 }
