@@ -1,7 +1,5 @@
 package paqueteEvaluacion;
-
-import java.io.ObjectInputStream.GetField;
-
+import paqueteEvaluacion.Util;
 public class Ejecutable {
 
 	public Ejecutable() {
@@ -23,8 +21,24 @@ public class Ejecutable {
 		electrodomesticos[8] = new Televisor(29, false, 100000, 4, "negro", 'A');
 		electrodomesticos[9] = new Electrodomestico(100000, 244, "cafe", 'F');
 
-		
+		float precioTotal = 0;
+		float precioTotalLavadora = 0;
+		float precioTotalTelevisor = 0;
 
+		for (int i = 0; i < electrodomesticos.length; i++) {
+			precioTotal += electrodomesticos[i].precioFinal(precioTotal, precioTotal);
+			if (electrodomesticos[i] instanceof Lavadora) {
+				precioTotalLavadora += electrodomesticos[i].precioFinal(precioTotal, precioTotalLavadora);
+			} else {
+				if (electrodomesticos[i] instanceof Televisor) {
+					precioTotalTelevisor += electrodomesticos[i].precioFinal(precioTotal, precioTotalTelevisor);
+
+				}
+			}
+		}
+		Util.escribir("El precio total de todos los televisores es: $" + (int)precioTotalTelevisor);
+		Util.escribir("El precio total de todas las lavadoras es: $" + (int)precioTotalLavadora);
+		Util.escribir("El precio total por todos los electrodomesticos es de: $" + (int)precioTotal);
 	}
 
 }
