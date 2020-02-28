@@ -22,21 +22,6 @@ class LavadoraTest {
 	}
 
 	@Test
-	void testLavadora() {
-		fail("No implementado aun"); // TODO
-	}
-
-	@Test
-	void testLavadoraIntInt() {
-		fail("No implementado aun"); // TODO
-	}
-
-	@Test
-	void testLavadoraFloatIntFloatStringChar() {
-		fail("No implementado aun"); // TODO
-	}
-
-	@Test
 	void testGetCarga() {
 		assertEquals(35, lavadoraPrueba.getCarga());
 	}
