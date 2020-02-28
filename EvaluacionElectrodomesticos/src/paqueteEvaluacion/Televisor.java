@@ -81,6 +81,7 @@ public class Televisor extends Electrodomestico {
 	@Override
 	public float precioFinal(float peso, float precio) {
 		float precioFinal = super.precioFinal(peso, precio);
+		this.getPrecioBase();
 		if (resolucion > 40) {
 			precioFinal = precioFinal / 100;
 			precioFinal = precioFinal * 130;

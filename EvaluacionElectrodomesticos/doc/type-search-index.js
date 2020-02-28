@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"paqueteEvaluacion","l":"Ejecutable"},{"p":"paqueteEvaluacion","l":"Electrodomestico"},{"p":"paqueteEvaluacion","l":"Lavadora"},{"p":"paqueteEvaluacion","l":"Televisor"},{"p":"paqueteEvaluacion","l":"Util"}]

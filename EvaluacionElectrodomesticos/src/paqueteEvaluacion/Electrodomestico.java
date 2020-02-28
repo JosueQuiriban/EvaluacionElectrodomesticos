@@ -135,6 +135,16 @@ public class Electrodomestico {
 	 * @param precio es el precio del objeto.
 	 * @return precioFinal.
 	 */
+	
+	/*public float precioFinal(float peso, float precio, int resolucion, boolean sintonizadorTDT) {
+		float precioFinal = 0;
+		precioSegunPeso(peso);
+		precioSegunConsumo(consumoEnergetico);
+		precioFinal = precioSegunPeso(peso) + 
+				precioSegunConsumo(consumoEnergetico);
+		return precioFinal;
+	}*/
+	
 	public float precioFinal(float peso, float precio) {
 		float precioFinal = 0;
 		precioSegunPeso(peso);
@@ -180,22 +190,22 @@ public class Electrodomestico {
 	 */
 	public float precioSegunConsumo(char consumoEnergetico) {
 		float sumaPrecio = 0;
-		if (consumoEnergetico == 'A') {
+		if (this.consumoEnergetico == 'A') {
 			sumaPrecio = precioBase + 100;
 		} else {
-			if (consumoEnergetico == 'B') {
+			if (this.consumoEnergetico == 'B') {
 				sumaPrecio = precioBase + 80;
 			} else {
-				if (consumoEnergetico == 'C') {
+				if (this.consumoEnergetico == 'C') {
 					sumaPrecio = precioBase + 60;
 				} else {
-					if (consumoEnergetico == 'D') {
+					if (this.consumoEnergetico == 'D') {
 						sumaPrecio = precioBase + 50;
 					} else {
-						if (consumoEnergetico == 'E') {
+						if (this.consumoEnergetico == 'E') {
 							sumaPrecio = precioBase + 30;
 						} else {
-							if (consumoEnergetico == 'F') {
+							if (this.consumoEnergetico == 'F') {
 								sumaPrecio = precioBase + 10;
 							}
 						}
