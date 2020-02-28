@@ -85,10 +85,10 @@ public class Televisor extends Electrodomestico {
 		float precioFinal = super.precioFinal(peso, precio);
 		if (sintonizadorTDT == true) {
 			precioFinal += 50;
-		}
+			}
 		if (resolucion > 40) {
 			precioFinal *=1.3;
+			}
+			return precioFinal;
 		}
-		return precioFinal;
-	}
 }

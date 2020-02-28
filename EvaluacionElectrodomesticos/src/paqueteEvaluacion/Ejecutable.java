@@ -53,10 +53,11 @@ public class Ejecutable {
 		 * @param precioTotalTelevisor Es el valor total de todos
 		 * 							   los Televisores.
 		 */
+		
+		
 		float precioTotal = 0;
 		float precioTotalLavadora = 0;
 		float precioTotalTelevisor = 0;
-
 		for (int i = 0; i < electrodomesticos.length; i++) {
 			precioTotal += electrodomesticos[i].precioFinal(
 					precioTotalTelevisor, precioTotalLavadora);
