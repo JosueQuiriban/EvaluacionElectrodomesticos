@@ -15,8 +15,8 @@ public class Ejecutable {
 		electrodomesticos[2] = new Televisor(25, true, 100000, 3, "verde", 'D');
 		electrodomesticos[3] = new Lavadora(35, 100000, 8, "blanco", 'A');
 		electrodomesticos[4] = new Electrodomestico(100000, 5, "amarillo", 'C');
-		electrodomesticos[5] = new Televisor(65, true, 100000, 8, "negro", 'A');
-		electrodomesticos[6] = new Lavadora(8, 100000, 4, "azul", 'M');
+		electrodomesticos[5] = new Televisor(65, false, 100000, 8, "negro", 'A');
+		electrodomesticos[6] = new Lavadora(8, 100000, 4, "azul", 'F');
 		electrodomesticos[7] = new Electrodomestico(100000, 2, "rojo", 'B');
 		electrodomesticos[8] = new Televisor(29, false, 100000, 4, "negro", 'A');
 		electrodomesticos[9] = new Electrodomestico(100000, 244, "cafe", 'F');
@@ -24,11 +24,12 @@ public class Ejecutable {
 		float precioTotal = 0;
 		float precioTotalLavadora = 0;
 		float precioTotalTelevisor = 0;
+		
 
 		for (int i = 0; i < electrodomesticos.length; i++) {
-			precioTotal += electrodomesticos[i].precioFinal(precioTotal, precioTotal);
+			precioTotal += electrodomesticos[i].precioFinal(precioTotalTelevisor, precioTotalLavadora);
 			if (electrodomesticos[i] instanceof Lavadora) {
-				precioTotalLavadora += electrodomesticos[i].precioFinal(precioTotal, precioTotalLavadora);
+				precioTotalLavadora += electrodomesticos[i].precioFinal(precioTotal,precioTotalLavadora);
 			} else {
 				if (electrodomesticos[i] instanceof Televisor) {
 					precioTotalTelevisor += electrodomesticos[i].precioFinal(precioTotal, precioTotalTelevisor);

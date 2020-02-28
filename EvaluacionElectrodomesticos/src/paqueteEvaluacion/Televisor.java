@@ -22,8 +22,9 @@ public class Televisor extends Electrodomestico {
 	public Televisor(int resolucion, boolean sintonizadorTDT, int precioBase, float peso, String color,
 			char consumoEnergetico) {
 		super(precioBase, peso, color, consumoEnergetico);
-		this.resolucion = RESOLUCION;
 		this.sintonizadorTDT = SINTONIZADOR_TDT;
+		this.resolucion = RESOLUCION;
+		
 		// TODO Apéndice de constructor generado automáticamente
 	}
 
@@ -43,7 +44,7 @@ public class Televisor extends Electrodomestico {
 			precioFinal = precioFinal / 100;
 			precioFinal = precioFinal * 130;
 		}
-		if (sintonizadorTDT = true) {
+		if (sintonizadorTDT == true) {
 			precioFinal += 50;
 		}
 		return precioFinal;
