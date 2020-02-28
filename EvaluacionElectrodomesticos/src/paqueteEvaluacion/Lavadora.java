@@ -32,16 +32,6 @@ public class Lavadora extends Electrodomestico {
 		return carga;
 	}
 
-	@Override
-	public float precioFinal(float peso, float precio) {
-		float precioFinal = super.precioFinal(peso, precio);
-		if (carga > 30) {
-			precioFinal += 50;
-		}
-		return precioFinal;
-
-	}
-
 	/*
 	 * Lavadora mademza = new Lavadora();
 	 * 
@@ -49,4 +39,13 @@ public class Lavadora extends Electrodomestico {
 	 * super.precioFinal(peso, precio); if (carga > 30) { precioFinal += 50; }
 	 * return precioFinal; }
 	 */
+
+	@Override
+	public float precioFinal(float peso, float precio) {
+		float precioFinal = super.precioFinal(peso, precio);
+		if (carga > 30) {
+			precioFinal += 50;
+		}
+		return precioFinal;
+	}
 }
