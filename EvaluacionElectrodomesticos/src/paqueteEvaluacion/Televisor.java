@@ -20,7 +20,7 @@ public class Televisor extends Electrodomestico {
 	}
 
 	public Televisor(int resolucion, boolean sintonizadorTDT, int precioBase, float peso, String color,
-			String consumoEnergetico) {
+			char consumoEnergetico) {
 		super(precioBase, peso, color, consumoEnergetico);
 		// TODO Apéndice de constructor generado automáticamente
 	}

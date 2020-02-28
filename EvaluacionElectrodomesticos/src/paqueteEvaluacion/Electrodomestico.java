@@ -63,7 +63,7 @@ public class Electrodomestico {
 	 * @param color             Se le da el valor por defecto usando una constante.
 	 * @param consumoEnergetico Se le da el valor por defecto usando una constante.
 	 */
-	public Electrodomestico(int precioBase, float peso, String color, String consumoEnergetico) {
+	public Electrodomestico(int precioBase, float peso, String color, char consumoEnergetico) {
 		this(precioBase, peso);
 		this.color = COLOR;
 		this.consumoEnergetico = CONSUMO_ENERGETICO;
