@@ -54,8 +54,8 @@ public class Televisor extends Electrodomestico {
 			int precioBase, float peso, String color,
 			char consumoEnergetico) {
 		super(precioBase, peso, color, consumoEnergetico);
-		this.sintonizadorTDT = SINTONIZADOR_TDT;
-		this.resolucion = RESOLUCION;
+		this.sintonizadorTDT = sintonizadorTDT;
+		this.resolucion = resolucion;
 	}
 
 	/**
