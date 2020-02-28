@@ -136,15 +136,6 @@ public class Electrodomestico {
 	 * @return precioFinal.
 	 */
 	
-	/*public float precioFinal(float peso, float precio, int resolucion, boolean sintonizadorTDT) {
-		float precioFinal = 0;
-		precioSegunPeso(peso);
-		precioSegunConsumo(consumoEnergetico);
-		precioFinal = precioSegunPeso(peso) + 
-				precioSegunConsumo(consumoEnergetico);
-		return precioFinal;
-	}*/
-	
 	public float precioFinal(float peso, float precio) {
 		float precioFinal = 0;
 		precioSegunPeso(peso);

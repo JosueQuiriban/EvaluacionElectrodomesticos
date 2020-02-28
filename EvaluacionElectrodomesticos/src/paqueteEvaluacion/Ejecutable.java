@@ -27,8 +27,8 @@ public class Ejecutable {
 		// TODO Apéndice de método generado automáticamente
 
 		/**
-		 * Arreglo de electrodomesticos el cual incluye objetos de tipo Televisor,
-		 * Electrodomestico y Lavadora.
+		 * Arreglo de electrodomesticos el cual incluye objetos de 
+		 * tipo Televisor, Electrodomestico y Lavadora.
 		 */
 		Electrodomestico electrodomesticos[] = new Electrodomestico[10];
 		electrodomesticos[0] = new Televisor(50, false, 100000, 6, "blanco", 'M');
@@ -41,46 +41,54 @@ public class Ejecutable {
 		electrodomesticos[7] = new Electrodomestico(100000, 2, "rojo", 'B');
 		electrodomesticos[8] = new Televisor(70, true, 100000, 4, "negro", 'A');
 		electrodomesticos[9] = new Electrodomestico(100000, 244, "cafe", 'F');
-
-		/**
-		 
-		 */
 		
 		/**
-		 * Es el metodo que recorre el arreglo buscando por medio de instanceof todos
-		 * los objetos de tipo Lavadora, Televisor y electrodomesticos ademas de
-		 * verificar los valores totales de cada tipo de objeto.
+		 * Es el metodo que recorre el arreglo buscando por medio de
+		 * instanceof todos los objetos de tipo Lavadora, Televisor y 
+		 * electrodomesticos ademas de verificar los valores totales
+		 * de cada tipo de objeto.
 		 * @param precioTotal          Es el valor total del objeto.
-		 * @param precioTotalLavadora  Es el valor total de todas las lavadoras.
-		 * @param precioTotalTelevisor Es el valor total de todos los Televisores.
+		 * @param precioTotalLavadora  Es el valor total de todas las 
+		 *						       lavadoras.
+		 * @param precioTotalTelevisor Es el valor total de todos
+		 * 							   los Televisores.
 		 */
 		float precioTotal = 0;
 		float precioTotalLavadora = 0;
 		float precioTotalTelevisor = 0;
 
 		for (int i = 0; i < electrodomesticos.length; i++) {
-			precioTotal += electrodomesticos[i].precioFinal(precioTotalTelevisor, precioTotalLavadora);
+			precioTotal += electrodomesticos[i].precioFinal(
+					precioTotalTelevisor, precioTotalLavadora);
 			if (electrodomesticos[i] instanceof Lavadora) {
 				float peso = ((Lavadora)electrodomesticos[i]).getPeso();
-				float precio = ((Lavadora)electrodomesticos[i]).getPrecioBase();
-				precioTotalLavadora += ((Lavadora)electrodomesticos[i]).precioFinal(peso, precio);
+				float precio = ((Lavadora)electrodomesticos[i]).
+						       getPrecioBase();
+				precioTotalLavadora += ((Lavadora)electrodomesticos[i]).
+						                precioFinal(peso, precio);
 			} else {
 				if (electrodomesticos[i] instanceof Televisor) {
-					float precio = ((Televisor)electrodomesticos[i]).getPrecioBase();
+					float precio = ((Televisor)electrodomesticos[i]).
+							       getPrecioBase();
 					float peso = ((Televisor)electrodomesticos[i]).getPeso();
-					precioTotalTelevisor += ((Televisor)electrodomesticos[i]).precioFinal(peso, precio);
+								 precioTotalTelevisor += ((Televisor)
+								 electrodomesticos[i])
+							     .precioFinal(peso, precio);
 
 				}
 			}
 		}
 
 		/**
-		 * Metodo que muestra al usuario el valor total de Televisores, Lavadoras y
-		 * Electrodomesticos.
+		 * Metodo que muestra al usuario el valor total de Televisores,
+		 * Lavadoras y Electrodomesticos.
 		 */
-		Util.escribir("El precio total de todos los televisores es: $" + (int) precioTotalTelevisor);
-		Util.escribir("El precio total de todas las lavadoras es: $" + (int) precioTotalLavadora);
-		Util.escribir("El precio total por todos los electrodomesticos" + " es de: $" + (int) precioTotal);
+		Util.escribir("El precio total de todos los televisores es: $" +
+		 (int) precioTotalTelevisor);
+		Util.escribir("El precio total de todas las lavadoras es: $" +
+		 (int) precioTotalLavadora);
+		Util.escribir("El precio total por todos los electrodomesticos" +
+		 " es de: $" + (int) precioTotal);
 	}
 
 }
