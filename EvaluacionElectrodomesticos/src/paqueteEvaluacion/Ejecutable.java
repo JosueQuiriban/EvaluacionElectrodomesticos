@@ -31,8 +31,8 @@ public class Ejecutable {
 		 * tipo Televisor, Electrodomestico y Lavadora.
 		 */
 		Electrodomestico electrodomesticos[] = new Electrodomestico[10];
-		electrodomesticos[0] = new Televisor(50, false, 100000, 6, "blanco", 'M');
-		electrodomesticos[1] = new Electrodomestico(100000, 50, "gris", 'L');
+		electrodomesticos[0] = new Televisor(50, false, 100000, 6, "blanco", 'F');
+		electrodomesticos[1] = new Electrodomestico(100000, 50, "gris", 'F');
 		electrodomesticos[2] = new Televisor(25, true, 100000, 3, "verde", 'D');
 		electrodomesticos[3] = new Lavadora(35, 100000, 8, "blanco", 'A');
 		electrodomesticos[4] = new Electrodomestico(100000, 5, "amarillo", 'C');
@@ -59,6 +59,7 @@ public class Ejecutable {
 		float precioTotalLavadora = 0;
 		float precioTotalTelevisor = 0;
 		for (int i = 0; i < electrodomesticos.length; i++) {
+			//System.out.println(i + " " + (int)electrodomesticos[i].precioFinal(precioTotal, precioTotal));
 			precioTotal += electrodomesticos[i].precioFinal(
 					precioTotalTelevisor, precioTotalLavadora);
 			if (electrodomesticos[i] instanceof Lavadora) {
@@ -80,6 +81,7 @@ public class Ejecutable {
 			}
 		}
 
+		
 		/**
 		 * Metodo que muestra al usuario el valor total de Televisores,
 		 * Lavadoras y Electrodomesticos.

@@ -154,7 +154,7 @@ public class Electrodomestico {
 	 */
 	public float precioSegunPeso(float peso) {
 		float aumentaPrecio = 0;
-		if (peso > 0 && peso <= 19) {
+		if (peso >= 0 && peso <= 19) {
 			aumentaPrecio += 10;
 		} else {
 			if (peso >= 20 && peso <= 49) {
