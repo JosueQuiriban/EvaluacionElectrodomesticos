@@ -59,7 +59,6 @@ public class Ejecutable {
 		float precioTotalLavadora = 0;
 		float precioTotalTelevisor = 0;
 		for (int i = 0; i < electrodomesticos.length; i++) {
-			//System.out.println(i + " " + (int)electrodomesticos[i].precioFinal(precioTotal, precioTotal));
 			precioTotal += electrodomesticos[i].precioFinal(
 					precioTotalTelevisor, precioTotalLavadora);
 			if (electrodomesticos[i] instanceof Lavadora) {

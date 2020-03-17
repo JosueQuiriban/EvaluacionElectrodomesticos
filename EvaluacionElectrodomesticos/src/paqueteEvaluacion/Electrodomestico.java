@@ -26,18 +26,18 @@ public class Electrodomestico {
 	 * Constantes con el valor por defecto.
 	 */
 	private final float PRECIO_BASE = 100000;
+	private final float PESO = 5;
 	private final String COLOR = "blanco";
 	private final char CONSUMO_ENERGETICO = 'F';
-	private final float PESO = 5;
 
 	/**
 	 * Constructor por defecto.
 	 */
 	public Electrodomestico() {
 		this.precioBase = PRECIO_BASE;
+		this.peso = PESO;
 	    this.color = COLOR;
 	    this.consumoEnergetico = CONSUMO_ENERGETICO;
-	    this.peso = PESO;
 	}
 
 	/**
@@ -138,10 +138,10 @@ public class Electrodomestico {
 	
 	public float precioFinal(float peso, float precio) {
 		float precioFinal = 0;
-		precioSegunPeso(peso);
-		precioSegunConsumo(consumoEnergetico);
-		precioFinal = precioSegunPeso(peso) + 
-				precioSegunConsumo(consumoEnergetico);
+		precioSegunPeso(getPeso());
+		precioSegunConsumo(getConsumoEnergetico());
+		precioFinal = precioSegunPeso(getPeso()) + 
+				precioSegunConsumo(getConsumoEnergetico());
 		return precioFinal;
 	}
 
@@ -154,16 +154,16 @@ public class Electrodomestico {
 	 */
 	public float precioSegunPeso(float peso) {
 		float aumentaPrecio = 0;
-		if (peso >= 0 && peso <= 19) {
+		if (getPeso() >= 0 && getPeso() <= 19) {
 			aumentaPrecio += 10;
 		} else {
-			if (peso >= 20 && peso <= 49) {
+			if (getPeso() >= 20 && getPeso() <= 49) {
 				aumentaPrecio += 50;
 			} else {
-				if (peso >= 50 && peso <= 79) {
+				if (getPeso() >= 50 && getPeso() <= 79) {
 					aumentaPrecio += 80;
 				} else {
-					if (peso > 89) {
+					if (getPeso() > 89) {
 						aumentaPrecio += 100;
 					}
 				}
@@ -180,27 +180,27 @@ public class Electrodomestico {
 	 * @return
 	 */
 	public float precioSegunConsumo(char consumoEnergetico) {
-		float sumaPrecio = 0;
-		if (this.consumoEnergetico == 'A') {
-			sumaPrecio = precioBase + 100;
+		float sumaPrecio = getPrecioBase();
+		if (getConsumoEnergetico() == 'A') {
+			sumaPrecio += 100;
 		} else {
-			if (this.consumoEnergetico == 'B') {
-				sumaPrecio = precioBase + 80;
+			if (getConsumoEnergetico() == 'B') {
+				sumaPrecio += 80;
 			} else {
-				if (this.consumoEnergetico == 'C') {
-					sumaPrecio = precioBase + 60;
+				if (getConsumoEnergetico() == 'C') {
+					sumaPrecio += 60;
 				} else {
-					if (this.consumoEnergetico == 'D') {
-						sumaPrecio = precioBase + 50;
+					if (getConsumoEnergetico() == 'D') {
+						sumaPrecio += 50;
 					} else {
-						if (this.consumoEnergetico == 'E') {
-							sumaPrecio = precioBase + 30;
+						if (getConsumoEnergetico() == 'E') {
+							sumaPrecio += 30;
 						} else {
-							if (this.consumoEnergetico == 'F') {
-								sumaPrecio = precioBase + 10;
+							if (getConsumoEnergetico() == 'F') {
+								sumaPrecio += 10;
 							}else {
-								this.consumoEnergetico = 'F';
-								sumaPrecio = precioBase + 10;
+								consumoEnergetico = 'F';
+								sumaPrecio += 10;
 							}
 						}
 					}

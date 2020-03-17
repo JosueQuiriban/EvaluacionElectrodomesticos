@@ -28,8 +28,8 @@ public class Televisor extends Electrodomestico {
 	 */
 	public Televisor() {
 		super();
-		this.resolucion = RESOLUCION;
-		this.sintonizadorTDT = SINTONIZADOR_TDT;
+		resolucion = RESOLUCION;
+		sintonizadorTDT = SINTONIZADOR_TDT;
 	}
 
 	/**
@@ -56,8 +56,8 @@ public class Televisor extends Electrodomestico {
 			int precioBase, float peso, String color,
 			char consumoEnergetico) {
 		super(precioBase, peso, color, consumoEnergetico);
-		this.sintonizadorTDT = sintonizadorTDT;
 		this.resolucion = resolucion;
+		this.sintonizadorTDT = sintonizadorTDT;
 	}
 
 	/**
